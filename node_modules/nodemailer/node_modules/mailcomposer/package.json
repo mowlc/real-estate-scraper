@@ -1,0 +1,68 @@
+{
+  "name": "mailcomposer",
+  "description": "Compose E-Mail messages",
+  "version": "3.9.0",
+  "author": {
+    "name": "Andris Reinman"
+  },
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "andris",
+      "email": "andris@node.ee"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andris9/mailcomposer.git"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "main": "./lib/mailcomposer",
+  "dependencies": {
+    "buildmail": "3.7.0",
+    "libmime": "2.0.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-eslint": "^18.1.0",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.4"
+  },
+  "engine": {
+    "node": ">=0.10"
+  },
+  "keywords": [
+    "e-mail",
+    "mime",
+    "parser"
+  ],
+  "gitHead": "860a25a78eb66da9d6ecf6f15e5419bf1449bfab",
+  "bugs": {
+    "url": "https://github.com/andris9/mailcomposer/issues"
+  },
+  "homepage": "https://github.com/andris9/mailcomposer#readme",
+  "_id": "mailcomposer@3.9.0",
+  "_shasum": "1b2781d349732f3f2ae419e1e187dcd5d9702712",
+  "_from": "mailcomposer@3.9.0",
+  "_npmVersion": "3.8.6",
+  "_nodeVersion": "6.0.0",
+  "_npmUser": {
+    "name": "andris",
+    "email": "andris@kreata.ee"
+  },
+  "dist": {
+    "shasum": "1b2781d349732f3f2ae419e1e187dcd5d9702712",
+    "tarball": "https://registry.npmjs.org/mailcomposer/-/mailcomposer-3.9.0.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/mailcomposer-3.9.0.tgz_1462964635561_0.8563633346930146"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/mailcomposer/-/mailcomposer-3.9.0.tgz"
+}

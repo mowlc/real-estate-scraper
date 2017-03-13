@@ -1,0 +1,63 @@
+{
+  "name": "nodemailer-direct-transport",
+  "version": "3.1.0",
+  "description": "Direct transport for Nodemailer",
+  "main": "lib/direct-transport.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andris9/nodemailer-direct-transport.git"
+  },
+  "keywords": [
+    "SMTP",
+    "Nodemailer"
+  ],
+  "author": {
+    "name": "Andris Reinman"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andris9/nodemailer-direct-transport/issues"
+  },
+  "homepage": "http://github.com/andris9/nodemailer-direct-transport",
+  "dependencies": {
+    "nodemailer-shared": "1.0.5",
+    "smtp-connection": "2.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-eslint": "^18.1.0",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.4.5",
+    "smtp-server": "^1.9.1"
+  },
+  "gitHead": "b7c1c68bc86c9eee827cda5e1c0bc54cec6f10e5",
+  "_id": "nodemailer-direct-transport@3.1.0",
+  "_shasum": "308b6f4c16000a3af1af1bb49eafd6a0b2747b62",
+  "_from": "nodemailer-direct-transport@3.1.0",
+  "_npmVersion": "3.8.6",
+  "_nodeVersion": "6.0.0",
+  "_npmUser": {
+    "name": "andris",
+    "email": "andris@kreata.ee"
+  },
+  "dist": {
+    "shasum": "308b6f4c16000a3af1af1bb49eafd6a0b2747b62",
+    "tarball": "https://registry.npmjs.org/nodemailer-direct-transport/-/nodemailer-direct-transport-3.1.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "andris",
+      "email": "andris@node.ee"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/nodemailer-direct-transport-3.1.0.tgz_1462965805249_0.7108569568954408"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nodemailer-direct-transport/-/nodemailer-direct-transport-3.1.0.tgz"
+}

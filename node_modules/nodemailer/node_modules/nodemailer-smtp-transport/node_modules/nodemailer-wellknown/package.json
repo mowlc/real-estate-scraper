@@ -1,0 +1,54 @@
+{
+  "name": "nodemailer-wellknown",
+  "version": "0.1.9",
+  "description": "Well known SMTP services",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andris9/nodemailer-wellknown.git"
+  },
+  "keywords": [
+    "SMTP",
+    "Nodemailer"
+  ],
+  "author": {
+    "name": "Andris Reinman"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andris9/nodemailer-wellknown/issues"
+  },
+  "homepage": "https://github.com/andris9/nodemailer-wellknown",
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  },
+  "gitHead": "c27052e01c201bc71c59f46507623f7dbc80bfc1",
+  "_id": "nodemailer-wellknown@0.1.9",
+  "_shasum": "373eb43c82b723bfa51da8b415409d6bca083dee",
+  "_from": "nodemailer-wellknown@0.1.9",
+  "_npmVersion": "3.8.3",
+  "_nodeVersion": "5.10.1",
+  "_npmUser": {
+    "name": "andris",
+    "email": "andris@kreata.ee"
+  },
+  "dist": {
+    "shasum": "373eb43c82b723bfa51da8b415409d6bca083dee",
+    "tarball": "https://registry.npmjs.org/nodemailer-wellknown/-/nodemailer-wellknown-0.1.9.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "andris",
+      "email": "andris@node.ee"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/nodemailer-wellknown-0.1.9.tgz_1461164310395_0.046569115947932005"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nodemailer-wellknown/-/nodemailer-wellknown-0.1.9.tgz"
+}

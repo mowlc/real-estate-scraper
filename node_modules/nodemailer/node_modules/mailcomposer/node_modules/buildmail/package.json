@@ -1,0 +1,69 @@
+{
+  "name": "buildmail",
+  "version": "3.7.0",
+  "description": "buildmail is a low level rfc2822 message composer. Define your own mime tree, no magic included.",
+  "author": {
+    "name": "Andris Reinman",
+    "email": "andris@kreata.ee"
+  },
+  "keywords": [
+    "RFC2822",
+    "mime"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andris9/buildmail.git"
+  },
+  "main": "lib/buildmail",
+  "dependencies": {
+    "addressparser": "1.0.1",
+    "libbase64": "0.1.0",
+    "libmime": "2.0.3",
+    "libqp": "1.1.0",
+    "nodemailer-fetch": "1.4.0",
+    "nodemailer-shared": "1.0.5"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "grunt": "~1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-eslint": "^18.1.0",
+    "grunt-mocha-test": "~0.12.7",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.4"
+  },
+  "gitHead": "fd244a1a42c077afbd723c1ef0f59ed0763df608",
+  "bugs": {
+    "url": "https://github.com/andris9/buildmail/issues"
+  },
+  "homepage": "https://github.com/andris9/buildmail#readme",
+  "_id": "buildmail@3.7.0",
+  "_shasum": "5f40b77c1c3c1ceb1490c1181284437de3045342",
+  "_from": "buildmail@3.7.0",
+  "_npmVersion": "3.8.6",
+  "_nodeVersion": "6.0.0",
+  "_npmUser": {
+    "name": "andris",
+    "email": "andris@kreata.ee"
+  },
+  "dist": {
+    "shasum": "5f40b77c1c3c1ceb1490c1181284437de3045342",
+    "tarball": "https://registry.npmjs.org/buildmail/-/buildmail-3.7.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "andris",
+      "email": "andris@node.ee"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/buildmail-3.7.0.tgz_1462964077610_0.16011622129008174"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/buildmail/-/buildmail-3.7.0.tgz"
+}

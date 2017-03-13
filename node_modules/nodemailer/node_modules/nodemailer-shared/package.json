@@ -1,0 +1,62 @@
+{
+  "name": "nodemailer-shared",
+  "version": "1.0.5",
+  "description": "Shared methods for the nodemailer stack",
+  "main": "lib/shared.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodemailer/nodemailer-shared.git"
+  },
+  "keywords": [
+    "nodemailer"
+  ],
+  "author": {
+    "name": "Andris Reinman"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodemailer/nodemailer-shared/issues"
+  },
+  "homepage": "https://github.com/nodemailer/nodemailer-shared#readme",
+  "dependencies": {
+    "nodemailer-fetch": "1.4.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-eslint": "^18.1.0",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.4.5"
+  },
+  "gitHead": "95c858a44c0d8785a40ba6dcd8efbc113838bbd5",
+  "_id": "nodemailer-shared@1.0.5",
+  "_shasum": "6de64484d47944422bb5f0886fffd908ada4ce5e",
+  "_from": "nodemailer-shared@1.0.5",
+  "_npmVersion": "3.8.6",
+  "_nodeVersion": "6.0.0",
+  "_npmUser": {
+    "name": "andris",
+    "email": "andris@kreata.ee"
+  },
+  "dist": {
+    "shasum": "6de64484d47944422bb5f0886fffd908ada4ce5e",
+    "tarball": "https://registry.npmjs.org/nodemailer-shared/-/nodemailer-shared-1.0.5.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "andris",
+      "email": "andris@kreata.ee"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/nodemailer-shared-1.0.5.tgz_1462963488482_0.250369000248611"
+  },
+  "_resolved": "https://registry.npmjs.org/nodemailer-shared/-/nodemailer-shared-1.0.5.tgz"
+}

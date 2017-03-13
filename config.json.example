@@ -1,0 +1,8 @@
+{
+	sender_email = "", 							//Email from which emails will be sent (must be gmail)
+	sender_pass = "", 							//Password for the mail specified abs
+	interval = 15, 								//Interval on which the script executes (between 15 and 30 minutes is optimal) 
+	receiver_email = [""],						//List of email addresses on which to send email 
+	url_bolha = "",								//URL of selection on bolha.com				
+	url_nepremicnine = ""						//URL of selection on nepremicnine.net				
+}
