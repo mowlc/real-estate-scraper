@@ -1,5 +1,11 @@
 # real-estate-scraper
-Web scraper that makes it easier to find real estate in Slovenia. Currently supporting two major webpages for real estate Bolha.com and Nepremicnine.net
+Web scraper that makes it easier to find real estate in Slovenia. After scraper finishes you get an email with updates, so you don't have to check web pages all the time but only. In email you get all the information you need: Title with location, short description, price and link to original listing.
+
+Email example:
+
+![Email example](http://shrani.si/f/2Z/oj/4hrdFzjY/2017-03-149-28-47.png)
+
+Currently supporting two major webpages for real estate Bolha.com and Nepremicnine.net
 
 ## Download
 In order to rund script you have to install [Node.js] (https://nodejs.org/en/) and do the following:
