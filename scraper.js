@@ -69,13 +69,16 @@ sites.push({
 					conn: "www.bolha.com" + bAds[i].children[3].children[1].children[0].attribs.href,
 					price: bAds[i].children[7].children[1].children[0].children[0].data
 				};
-				try {
-					db.getData("/B"+ad.id);
-				} catch (err){
-					bolhaDelta += 1;
-					db.push("/B"+ad.id,ad);
-					delta.push(ad);
-				}	
+
+                if (processFilters(ad)) {
+                    try {
+                        db.getData("/N"+ad.id);
+                    } catch (err){
+                        bolhaDelta += 1;
+                        db.push("/N"+ad.id,ad);
+                        delta.push(ad);
+                    }
+                }
 			}
 		}
 		console.log((new Date()).toString() + " BOLHA.COM Delta: " + bolhaDelta);
@@ -100,12 +103,15 @@ sites.push({
 					conn: 	"https://www.nepremicnine.net" + nAds[i].children[5].children[5].children[0].attribs.href,//nAds[i].children[1].children[0].attribs.href,
 					price: 	nAds[i].children[5].children[11].children[13].children[4].children[0].data//nAds[i].children[5].children[13].children[4].children[0].data
 				};
-				try {
-					db.getData("/N"+ad.id);
-				} catch (err){
-					nepremDelta += 1;
-					db.push("/N"+ad.id,ad);
-					delta.push(ad);
+
+				if (processFilters(ad)) {
+                    try {
+                        db.getData("/N"+ad.id);
+                    } catch (err){
+                        nepremDelta += 1;
+                        db.push("/N"+ad.id,ad);
+                        delta.push(ad);
+                    }
 				}
 			}
 		}
@@ -115,24 +121,41 @@ sites.push({
 	}
 });
 
+function processFilters(ad) {
+	var filters = config.filters;
+	var titleContains = filters.title.contains;
 
+	if (titleContains.length > 0) {
+        for(var i in titleContains) {
+            if (ad.title.indexOf(titleContains[i]) !== -1) {
+                return true;
+            }
+        }
+	} else {
+		return true;
+	}
 
-setInterval( 
-	function(){
-		console.log((new Date()).toString() + " STARTED"); 
-		if ((new Date()).getHours() < 22 && (new Date()).getHours() >= 7) {
-			for (var i = 0; i < sites.length; i++){
-				request({
-						url: sites[i].url,
-						method: "GET",
-						headers: {
-							"user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
-						}
-					},
-					sites[i].callback
-				);
-			}
-		}
-	},
+	return false;
+}
+
+function runScraping() {
+    console.log((new Date()).toString() + " STARTED");
+    if ((new Date()).getHours() < 22 && (new Date()).getHours() >= 7) {
+        for (var i = 0; i < sites.length; i++){
+            request({
+                    url: sites[i].url,
+                    method: "GET",
+                    headers: {
+                        "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+                    }
+                },
+                sites[i].callback
+            );
+        }
+    }
+}
+
+setInterval(
+	runScraping,
 	interval * 60 * 1000
 );

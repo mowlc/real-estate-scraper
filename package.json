@@ -1,0 +1,18 @@
+{
+
+    "name": "real-estate-scraper",
+    "version": "0.0.1",
+    "description": "Realestate scraper",
+    "repository": {
+        "type": "git"
+    },
+
+    "dependencies": {
+        "nodemailer": "2.4.2",
+        "tinyreq": "3.1.1",
+        "node-json-db": "0.7.2",
+        "cheerio": "0.20.0",
+        "daemon": "1.1.0"
+    }
+
+}
