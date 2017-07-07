@@ -11,7 +11,7 @@ Currently supporting two major webpages for real estate Bolha.com and Nepremicni
 In order to rund script you have to install [Node.js] (https://nodejs.org/en/) and do the following:
 * Clone repo 
 ```bash
-git clone https://github.com/mowlc/Nepremicnine
+git clone https://github.com/mowlc/real-estate-scraper.git
 ```
 * Install additional libraries
 ```bash
