@@ -19,13 +19,19 @@ npm install --save tinyreq
 npm install --save cheerio 
 npm install --save node-json-db 
 npm install --save nodemailer
+
+
 ```
 
 ## Run
-Take config.json.example, compy and rename it to config.json. Then fill in the required data:
+Firstly you need to get oAuth credentials. Very good tutorial on how to get them can be found here: https://stackoverflow.com/questions/24098461/nodemailer-gmail-what-exactly-is-a-refresh-token-and-how-do-i-get-one
+Once you have your clientID, clientSecret, refreshToken and accessToken take config.json.example, compy and rename it to config.json. Then fill in the required data:
 ```bash
 sender_email - Email from which emails will be sent (must be gmail)
-sender_pass - Password for the mail specified abs
+clientID - Client ID for oAuth
+clientSecret - Client secret for oAuth
+refreshToken - Refresh token for oAuth
+accessToken - Inital access token for oAuth, can also be empty because new one is generated upon registration
 interval = 15 - Interval on which the script executes (between 15 and 30 minutes is optimal) 
 receiver_email - List of email addresses on which to send email 
 url_bolha  - URL of selection on bolha.com				

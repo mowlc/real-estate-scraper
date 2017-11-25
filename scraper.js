@@ -6,10 +6,15 @@ var nodemailer = require('nodemailer');
 var config = require( "./config.json" );
 
 var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service:"Gmail",
     auth: {
+		type: "OAuth2",
         user: config.sender_email,
-        pass: config.sender_pass
+        clientId: config.clientID,
+        clientSecret: config.clientSecret,
+        refreshToken: config.refreshToken,
+		accessToken: config.accessToken,
+		expires: 1484314697598
     }
 });
 var interval = config.interval;
@@ -51,7 +56,7 @@ function onEnd() {
 		
 	}
 } 
-
+onEnd();
 
 
 sites.push({
@@ -126,7 +131,7 @@ setInterval(
 						url: sites[i].url,
 						method: "GET",
 						headers: {
-							"user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+							"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
 						}
 					},
 					sites[i].callback
