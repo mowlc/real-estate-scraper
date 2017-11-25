@@ -58,68 +58,69 @@ function onEnd() {
 } 
 onEnd();
 
-
-sites.push({
-	url: config.url_bolha, 
-	callback: function (err, body) {
-		var bolhaDelta = 0;
-		if(body) {
-			var $ = cheerio.load(body);
-			var bAds = $(".ad");
-			for (var i = 0; i < bAds.length; i++){
-				var ad = {
-					id: bAds[i].children[3].children[1].children[0].attribs.href.split("aclct=")[1],
-					title: bAds[i].children[3].children[1].children[0].attribs.title,
-					desc: bAds[i].children[3].children[2].data.trim(),
-					conn: "www.bolha.com" + bAds[i].children[3].children[1].children[0].attribs.href,
-					price: bAds[i].children[7].children[1].children[0].children[0].data
-				};
-				try {
-					db.getData("/B"+ad.id);
-				} catch (err){
-					bolhaDelta += 1;
-					db.push("/B"+ad.id,ad);
-					delta.push(ad);
-				}	
-			}
-		}
-		console.log((new Date()).toString() + " BOLHA.COM Delta: " + bolhaDelta);
-		bolhaEnd = true;
-		onEnd();
-	}
-});
-
-
-sites.push({
-	url: config.url_nepremicnine, 
-	callback: function (err, body) {
-		var nepremDelta = 0;
-		if(body) {
-			var $ = cheerio.load(body);
-			var nAds = $(".oglas_container");
-			for (var i = 0; i < nAds.length; i++){
-				var ad = {
-					id: 	nAds[i].children[5].children[5].children[0].attribs.title,//id: nAds[i].children[1].children[0].attribs.title,
-					title: 	nAds[i].children[5].children[5].children[0].children[0].children[0].data,//nAds[i].children[1].children[0].children[0].children[0].data,
-					desc: 	nAds[i].children[5].children[11].children[9].children[1].children[0].data,//nAds[i].children[5].children[9].children[1].children[0].data,
-					conn: 	"https://www.nepremicnine.net" + nAds[i].children[5].children[5].children[0].attribs.href,//nAds[i].children[1].children[0].attribs.href,
-					price: 	nAds[i].children[5].children[11].children[13].children[4].children[0].data//nAds[i].children[5].children[13].children[4].children[0].data
-				};
-				try {
-					db.getData("/N"+ad.id);
-				} catch (err){
-					nepremDelta += 1;
-					db.push("/N"+ad.id,ad);
-					delta.push(ad);
+for (var pIdx = 0; pIdx < config.url_bolha.length; pIdx++){
+	sites.push({
+		url: config.url_bolha[pIdx], 
+		callback: function (err, body) {
+			var bolhaDelta = 0;
+			if(body) {
+				var $ = cheerio.load(body);
+				var bAds = $(".ad");
+				for (var i = 0; i < bAds.length; i++){
+					var ad = {
+						id: bAds[i].children[3].children[1].children[0].attribs.href.split("aclct=")[1],
+						title: bAds[i].children[3].children[1].children[0].attribs.title,
+						desc: bAds[i].children[3].children[2].data.trim(),
+						conn: "www.bolha.com" + bAds[i].children[3].children[1].children[0].attribs.href,
+						price: bAds[i].children[7].children[1].children[0].children[0].data
+					};
+					try {
+						db.getData("/B"+ad.id);
+					} catch (err){
+						bolhaDelta += 1;
+						db.push("/B"+ad.id,ad);
+						delta.push(ad);
+					}	
 				}
 			}
+			console.log((new Date()).toString() + " BOLHA.COM Delta: " + bolhaDelta);
+			bolhaEnd = true;
+			onEnd();
 		}
-		console.log((new Date()).toString() + " NEPREMICNINE.NET Delta: " + nepremDelta);
-		nepremEnd = true;
-		onEnd();
-	}
-});
+	});
+}
 
+for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++){
+	sites.push({
+		url: config.url_nepremicnine[pIdx], 
+		callback: function (err, body) {
+			var nepremDelta = 0;
+			if(body) {
+				var $ = cheerio.load(body);
+				var nAds = $(".oglas_container");
+				for (var i = 0; i < nAds.length; i++){
+					var ad = {
+						id: 	nAds[i].children[5].children[5].children[0].attribs.title,//id: nAds[i].children[1].children[0].attribs.title,
+						title: 	nAds[i].children[5].children[5].children[0].children[0].children[0].data,//nAds[i].children[1].children[0].children[0].children[0].data,
+						desc: 	nAds[i].children[5].children[11].children[9].children[1].children[0].data,//nAds[i].children[5].children[9].children[1].children[0].data,
+						conn: 	"https://www.nepremicnine.net" + nAds[i].children[5].children[5].children[0].attribs.href,//nAds[i].children[1].children[0].attribs.href,
+						price: 	nAds[i].children[5].children[11].children[13].children[4].children[0].data//nAds[i].children[5].children[13].children[4].children[0].data
+					};
+					try {
+						db.getData("/N"+ad.id);
+					} catch (err){
+						nepremDelta += 1;
+						db.push("/N"+ad.id,ad);
+						delta.push(ad);
+					}
+				}
+			}
+			console.log((new Date()).toString() + " NEPREMICNINE.NET Delta: " + nepremDelta);
+			nepremEnd = true;
+			onEnd();
+		}
+	});
+}
 
 
 setInterval( 

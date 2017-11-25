@@ -34,8 +34,8 @@ refreshToken - Refresh token for oAuth
 accessToken - Inital access token for oAuth, can also be empty because new one is generated upon registration
 interval = 15 - Interval on which the script executes (between 15 and 30 minutes is optimal) 
 receiver_email - List of email addresses on which to send email 
-url_bolha  - URL of selection on bolha.com				
-url_nepremicnine - URL of selection on nepremicnine.net				
+url_bolha  - list of URLs of selection on bolha.com				
+url_nepremicnine - list of URLs of selection on nepremicnine.net				
 ```
 You can get desired URL's from chosen site(bolha, nepremicnine.net) by configuring search paramteres on the site and then copying the URL in to configuration file. 
 
