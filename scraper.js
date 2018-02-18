@@ -99,19 +99,23 @@ for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++){
 				var $ = cheerio.load(body);
 				var nAds = $(".oglas_container");
 				for (var i = 0; i < nAds.length; i++){
-					var ad = {
-						id: 	nAds[i].children[5].children[5].children[0].attribs.title,//id: nAds[i].children[1].children[0].attribs.title,
-						title: 	nAds[i].children[5].children[5].children[0].children[0].children[0].data,//nAds[i].children[1].children[0].children[0].children[0].data,
-						desc: 	nAds[i].children[5].children[11].children[9].children[1].children[0].data,//nAds[i].children[5].children[9].children[1].children[0].data,
-						conn: 	"https://www.nepremicnine.net" + nAds[i].children[5].children[5].children[0].attribs.href,//nAds[i].children[1].children[0].attribs.href,
-						price: 	nAds[i].children[5].children[11].children[13].children[4].children[0].data//nAds[i].children[5].children[13].children[4].children[0].data
-					};
 					try {
-						db.getData("/N"+ad.id);
-					} catch (err){
-						nepremDelta += 1;
-						db.push("/N"+ad.id,ad);
-						delta.push(ad);
+						var ad = {
+							id: 	nAds[i].children[5].children[5].children[0].attribs.title,//id: nAds[i].children[1].children[0].attribs.title,
+							title: 	nAds[i].children[5].children[5].children[0].children[0].children[0].data,//nAds[i].children[1].children[0].children[0].children[0].data,
+							desc: 	nAds[i].children[5].children[11].children[9].children[1].children[0].data,//nAds[i].children[5].children[9].children[1].children[0].data,
+							conn: 	"https://www.nepremicnine.net" + nAds[i].children[5].children[5].children[0].attribs.href,//nAds[i].children[1].children[0].attribs.href,
+							price: 	nAds[i].children[5].children[11].children[13].children[4].children[0].data//nAds[i].children[5].children[13].children[4].children[0].data
+						};
+						try {
+							db.getData("/N"+ad.id);
+						} catch (err){
+							nepremDelta += 1;
+							db.push("/N"+ad.id,ad);
+							delta.push(ad);
+						}
+					} catch (err) {
+						console.log("NEPREMICNINE no data err" + err);
 					}
 				}
 			}
